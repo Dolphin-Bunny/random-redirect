@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>Redirecting...</head>
+    <body>
+        <script>
+            const params = new URLSearchParams( window.location.search );
+
+            const urls = params.get("urls");
+            console.log( urls );
+
+            const decoded = atob(urls);
+            console.log( decoded );
+
+            const url_array = JSON.parse(decoded);
+            console.log( url_array );
+
+            const rand_index = Math.floor( Math.random() * url_array.length );
+            console.log( "Choosing url " + rand_index );
+
+            const rand_url = url_array[rand_index];
+            console.log( rand_url );
+
+            window.location.href = rand_url;
+        </script>
+    </body>
+</html>
